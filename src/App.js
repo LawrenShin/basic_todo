@@ -3,10 +3,8 @@ import { Row } from 'antd';
 import { store } from './store';
 import { Provider } from 'react-redux';
 
-import TodoList from './components/lists/TodoList';
-import ProgressList from './components/lists/ProgressList';
-import DoneList from './components/lists/DoneList';
 import TaskSetter from './components/TaskSetter';
+import ListContainer from './components/lists/ListContainer';
 
 import './App.css';
 
@@ -16,9 +14,17 @@ const App = props => {
     <Provider store={store}>
       <Row>
         <TaskSetter />
-        <TodoList />
-        <ProgressList />
-        <DoneList />
+        <ListContainer 
+          from={'todo'}
+          where={'progress'}
+        />
+        <ListContainer 
+          from={'progress'}
+          where={'done'}
+        />
+        <ListContainer 
+          from={'done'}
+        />
       </Row>
     </Provider>
   );
