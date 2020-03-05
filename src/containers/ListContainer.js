@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Badge } from 'antd';
 import { connect } from 'react-redux';
-import List from './List';
-import { actionCreator } from '../../store/reducers';
+import List from '../components/List';
+import { actionCreator } from '../store/reducers';
 
 const colorPicker = from => {
     switch(from){
@@ -15,7 +15,7 @@ const colorPicker = from => {
     }
 }
 
-const TodoList = ({ tasksArr, move, from }) => (
+const ListContainer = ({ tasksArr, move, from }) => (
     <Col span={8}>
         <>
             <h1>
@@ -40,4 +40,4 @@ export default connect(
             actionCreator('MOVE', { from, where, task })
         )
     })
-)(TodoList);
+)(ListContainer);

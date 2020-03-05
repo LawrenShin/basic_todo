@@ -4,7 +4,7 @@ import { store } from './store';
 import { Provider } from 'react-redux';
 
 import TaskSetter from './components/TaskSetter';
-import ListContainer from './components/lists/ListContainer';
+import ListContainer from './containers/ListContainer';
 
 import './App.css';
 
